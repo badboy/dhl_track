@@ -20,7 +20,7 @@ class Status
   end
 
   def to_s
-    "#{time}: #{status} (in #{location})"
+    "#{time}: #{description} (in #{location})"
   end
 
   def inspect
@@ -28,7 +28,7 @@ class Status
   end
 
   def delivered?
-    status == "delivered"
+    status_code == "delivered"
   end
 
   private
