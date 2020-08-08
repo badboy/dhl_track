@@ -7,15 +7,16 @@ require "dhl_track/version"
 DHL_API_URI = "https://api-eu.dhl.com"
 
 class Status
+  attr_reader :time
+  attr_reader :location
+  attr_reader :status_code
+  attr_reader :status
+  attr_reader :description
+
   def self.from_api(status)
-    attr_reader :time
-    attr_reader :location
-    attr_reader :status_code
-    attr_reader :status
-    attr_reader :description
 
     time = Time.parse(status.timestamp)
-    location = status.location.address.addressLocality
+    location = status.location&.address&.addressLocality || "unknown"
     self.new(time, location, status.status_code, status.status, status.description)
   end
 

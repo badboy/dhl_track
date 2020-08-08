@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dhl_track (0.1.0)
+    dhl_track (0.2.1)
       faraday (~> 1.0.1)
       faraday_middleware (~> 1.0.0)
       rash_alt (~> 0.4.8)
