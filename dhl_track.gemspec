@@ -24,4 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "faraday", "~> 1.0.1"
   spec.add_dependency "faraday_middleware", "~> 1.0.0"
   spec.add_dependency "rash_alt", "~> 0.4.8"
+  spec.add_dependency "nokogiri", "~> 1.10"
 end

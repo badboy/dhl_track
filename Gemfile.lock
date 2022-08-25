@@ -4,6 +4,7 @@ PATH
     dhl_track (0.2.1)
       faraday (~> 1.0.1)
       faraday_middleware (~> 1.0.0)
+      nokogiri (~> 1.10)
       rash_alt (~> 0.4.8)
 
 GEM
@@ -14,14 +15,19 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (1.0.0)
       faraday (~> 1.0)
-    hashie (3.6.0)
+    hashie (5.0.0)
     method_source (1.0.0)
-    multipart-post (2.1.1)
+    mini_portile2 (2.8.0)
+    multipart-post (2.2.3)
+    nokogiri (1.13.8)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    rash_alt (0.4.8)
-      hashie (~> 3.6)
+    racc (1.6.0)
+    rash_alt (0.4.12)
+      hashie (>= 3.4)
 
 PLATFORMS
   ruby

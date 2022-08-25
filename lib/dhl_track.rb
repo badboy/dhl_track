@@ -1,5 +1,6 @@
 require 'faraday'
 require 'faraday_middleware'
+require 'nokogiri'
 require 'time'
 
 require "dhl_track/version"
@@ -14,7 +15,6 @@ class Status
   attr_reader :description
 
   def self.from_api(status)
-
     time = Time.parse(status.timestamp)
     location = status.location&.address&.addressLocality || "unknown"
     self.new(time, location, status.status_code, status.status, status.description)
@@ -38,7 +38,7 @@ class Status
     @location = location
     @status_code = status_code
     @status = status
-    @description = description
+    @description = Nokogiri::HTML(description).inner_text
   end
 end
 
