@@ -81,7 +81,7 @@ class DhlTrack
         raise UnknownPackageError.new(resp)
       end
 
-      raise Error.new(respo)
+      raise Error.new(resp)
     end
 
     shipments = resp.body.shipments
