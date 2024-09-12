@@ -29,7 +29,7 @@ class Status
   end
 
   def delivered?
-    status_code == "delivered"
+    status_code == "delivered" || status == "SIGNATURE_RECORDED"
   end
 
   private
