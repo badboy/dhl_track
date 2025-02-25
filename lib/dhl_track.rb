@@ -15,13 +15,16 @@ class Status
   attr_reader :description
 
   def self.from_api(status)
-    time = Time.parse(status.timestamp)
+    time = status.timestamp && Time.parse(status.timestamp)
     location = status.location&.address&.addressLocality || "unknown"
     self.new(time, location, status.status_code, status.status, status.description)
   end
 
   def to_s
-    "#{time}: #{description} (in #{location})"
+    msg = ""
+    msg << "#{time}: " if time
+    msg << "#{description} (in #{location})"
+    msg
   end
 
   def inspect
