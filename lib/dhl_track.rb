@@ -21,7 +21,7 @@ class Status
   end
 
   def to_s
-    msg = ""
+    msg = String.new("")
     msg << "#{time}: " if time
     msg << "#{description} (in #{location})"
     msg
